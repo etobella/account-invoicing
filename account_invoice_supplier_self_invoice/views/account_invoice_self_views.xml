@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_account_invoice_self_form" model="ir.ui.view">
+        <field name="name">account.invoice.self.form</field>
+        <field name="model">account.invoice.self</field>
+        <field name="type">form</field>
+        <field name="arch" type="xml">
+            <form create="false" edit="false" >
+                <sheet>
+                    <group>
+                        <field name="number"/>
+                        <field name="invoice_id"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_account_invoice_self_tree" model="ir.ui.view">
+        <field name="name">account.invoice.self.tree</field>
+        <field name="model">account.invoice.self</field>
+        <field name="type">tree</field>
+        <field name="arch" type="xml">
+            <tree create="false" edit="false" >
+                <field name="number"/>
+                <field name="invoice_id"/>
+            </tree>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="account_invoice_self_action">
+        <field name="name">Self Invoices</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">account.invoice.self</field>
+        <field name="view_type">form</field>
+        <field name="view_mode">tree,form</field>
+        <field name="context">{}</field>
+    </record>
+</odoo>
