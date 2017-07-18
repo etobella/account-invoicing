@@ -81,5 +81,5 @@ class TestSelfInvoice(common.TransactionCase):
         names = invoice2.account_invoice_self_ids.name_get()
         self.assertEqual(
             invoice2.account_invoice_self_ids.ensure_one().number,
-            names[invoice.account_invoice_self_ids.ensure_one().id]
+            names[invoice2.account_invoice_self_ids.ensure_one().id]
         )
