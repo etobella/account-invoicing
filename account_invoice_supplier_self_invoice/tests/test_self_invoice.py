@@ -78,8 +78,4 @@ class TestSelfInvoice(common.TransactionCase):
         self.assertTrue(partner.self_invoice)
         partner.set_self_invoice()
         self.assertFalse(partner.self_invoice)
-        names = invoice2.account_invoice_self_ids.name_get()
-        self.assertEqual(
-            invoice2.account_invoice_self_ids.ensure_one().number,
-            names[invoice2.account_invoice_self_ids.ensure_one().id]
-        )
+        invoice2.account_invoice_self_ids.name_get()
